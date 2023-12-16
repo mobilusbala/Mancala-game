@@ -1,17 +1,32 @@
-# Getting Started
+# Spring Boot Mancala Game
+Two-player turn-based strategy board games played with small stones, beans, or seeds and rows of holes or pits in the earth, a board or other playing surface. The objective is usually to capture all or some set of the opponent's pieces.
 
-### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.0/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.0/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.6.0/reference/htmlsingle/#boot-features-developing-web-applications)
+###  Board Setup
+Each of the two players has his six pits in front of him. To the right of the six pits,
+each player has a larger pit. At the start of the game, there are six stones in each
+of the six round pits .
 
-### Guides
-The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+### Rules
+
+### Game Play
+The player who begins with the first move picks up all the stones in any of his
+own six pits, and sows the stones on to the right, one in each of the following
+pits, including his own big pit. No stones are put in the opponents' big pit. If the
+player's last stone lands in his own big pit, he gets another turn. This can be
+repeated several times before it's the other player's turn.
+
+### Capturing Stones
+
+During the game the pits are emptied on both sides. Always when the last stone
+lands in an own empty pit, the player captures his own stone and all stones in the
+opposite pit (the other player’s pit) and puts them in his own (big or little?) pit.
+
+### The Game Ends
+The game is over as soon as one of the sides runs out of stones. The player who
+still has stones in his pits keeps them and puts them in his big pit. The winner of
+the game is the player who has the most stones in his big pit.
+
+
 

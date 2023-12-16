@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Mancala Game</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+	<h1 align="center">Mancala Game</h1>
+
+   <h4 align="center" style="color:blue;font-weight: bold; " th:text=" ${turn}"></h4> <!-- 'Turn => ' + -->
+
+	<!-- 					Print the gameboard:					 -->
+	<div id="board-container">
+		<div align="right">
+
+			<span class="h1"> Player 1</span>
+			<p class="pt-2"><----------------- Direction of Play</p>
+
+		</div>
+
+		<div id="board">
+
+			<form>
+				<!--First endzone:	 -->
+				<div>
+					<div class="circle">
+						<a  class="isDisabled btn btn-outline-secondary" th:text="${player1[6].stones}" th:href="@{|}"></a>
+					</div>
+				</div>
+
+				<!-- Second endzone:	 -->
+				<div>
+					<div class="circle">
+					<a  class="isDisabled btn btn-outline-secondary" th:text="${player2[6].stones}" th:href="@{|}"></a>
+					</div>
+				</div>
+				
+				<!-- Top pits:	 -->
+
+				<div style="float: right">
+					<a  th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[0].stones}" th:href="@{|/sows/1|}"></a>
+				</div>
+
+				<div style="float: right">
+					<a th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[1].stones}" th:href="@{|/sows/2|}"></a>
+				</div>
+
+				<div style="float: right">
+
+					<a th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[2].stones}" th:href="@{|/sows/3|}"></a>
+
+				</div>
+
+				<div style="float: right">
+
+					<a th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[3].stones}" th:href="@{|/sows/4|}"></a>
+
+				</div>
+
+				<div style="float: right">
+
+					<a th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[4].stones}" th:href="@{|/sows/5|}"></a>
+
+				</div>
+
+				<div style="float: right">
+
+					<a th:classappend ="${status} != 0 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player1[5].stones}" th:href="@{|/sows/6|}"></a>
+
+				</div>
+
+
+				<!-- Bottom pits:	 -->
+
+				<div>
+
+					<a  th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[0].stones}" th:href="@{|/sows/8|}"></a>
+
+				</div>
+
+				<div>
+
+					<a  th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[1].stones}" th:href="@{|/sows/9|}"></a>
+
+				</div>
+
+				<div>
+
+					<a th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[2].stones}" th:href="@{|/sows/10|}"></a>
+
+				</div>
+
+				<div>
+
+					<a th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[3].stones}" th:href="@{|/sows/11|}"></a>
+
+				</div>
+
+				<div>
+					<a th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[4].stones}" th:href="@{|/sows/12|}"></a>
+
+				</div>
+
+				<div>
+
+					<a th:classappend ="${status} != 1 ? 'isDisabled'" class="btn btn-outline-secondary" th:text="${player2[5].stones}" th:href="@{|/sows/13|}"></a>
+
+				</div>
+
+			</form>
+
+		</div>
+		<div align="left">
+			<p class="pt-2">
+				Direction of Play -----------------> 
+			</p>
+			<p class="h1"> Player 2</p>
+			
+		</div>
+	</div>
+
+
+</body>
+
+</html>
